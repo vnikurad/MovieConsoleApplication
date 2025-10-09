@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieConsoleApp
 {
-    public class Movie
+    public class Movie : IMovie
     {
         public string Title { get; set; }
         public string Director { get; set; }
