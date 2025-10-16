@@ -27,6 +27,10 @@
             //    movie.PrintInfo();
             //}
 
+            //////////////////////////////////////////////////////////////////
+            ///
+            /*
+
             Console.WriteLine("How many movies do you want to enter?");
             int movieCount = int.Parse(Console.ReadLine());
 
@@ -56,8 +60,39 @@
             {
                 movies[i].PrintInfo();
             }
+            */
 
+            List<Movie> movies = new List<Movie>();
+            string input;
 
+            do
+            {
+                Console.WriteLine("\nEnter movie details:");
+
+                Console.Write("Title: ");
+                string title = Console.ReadLine();
+
+                Console.Write("Director: ");
+                string director = Console.ReadLine();
+
+                Console.Write("Release Year: ");
+                int releaseYear = int.Parse(Console.ReadLine());
+
+                //add new movie to the list
+
+                movies.Add(new Movie(title, director, releaseYear));
+
+                Console.WriteLine("\nDo you want to enter another movie? (y/n)");
+                input = Console.ReadLine().ToLower();
+            }
+
+            while (input == "y");
+
+                Console.WriteLine("\n--- Movie List ---");
+                foreach (var movie in movies)
+                {
+                    movie.PrintInfo();
+                }
+            }
         }
     }
-}
